@@ -26,3 +26,20 @@ doctest = true
 [profile.release]
 lto = "thin"
 codegen-units = 1
+
+[package.metadata]
+include = [
+       "src/**/*.rs",
+       "Cargo.toml",
+       "README.md",
+       "LICENSE",
+]
+exclude = [
+       "*.md",
+       "benches/**",
+       "dev/**",
+       "examples/**",
+       "expand.rs",
+       "target/**",
+       "tests/**",
+]
