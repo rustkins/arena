@@ -1,0 +1,28 @@
+[package]
+name = "arena"
+authors = ["rustkin"]
+categories = ["data-structures", "memory-management"]
+description = "Simple Atomic Thread-safe Bump Arena for fast memory allocations, and global drops"
+documentation = "https://docs.rs/arena"
+include = ["Cargo.toml", "src/**/*.rs", "README.md", "LICENSE"]
+keywords = ["allocator", "arena", "bump", "slab" ]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/rustkins/arena"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+#derive_more = {version = "1.0.0-beta", features=["from", "display"]}
+
+[dev-dependencies]
+sysinfo = "0.38.2"
+
+
+[lib]
+doctest = true
+
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
